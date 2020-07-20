@@ -475,6 +475,14 @@ public class HppRequest {
     private String challengeRequestIndicator;
 
 	/**
+	 * Merchant Response URL. Used to set which URL in your application the transaction response will be sent to.
+	 */
+	@Size(min = 0, max = 255, message = "{hppRequest.merchantResponseUrl.size}")
+	@JsonProperty("MERCHANT_RESPONSE_URL")
+	@JsonInclude(Include.NON_EMPTY)
+	private String merchantResponseUrl;
+	
+	/**
 	 * Getter for merchant ID.
 	 * 
 	 * @return String
@@ -1968,6 +1976,34 @@ public class HppRequest {
 	}
 
 	/**
+	 * Helper method to add merchant response url.
+	 *
+	 * @param merchantResponseUrl
+	 * @return HppRequest
+	 */
+	public HppRequest addMerchantResponseUrl(String merchantResponseUrl) {
+		this.merchantResponseUrl = merchantResponseUrl;
+		return this;
+	}
+
+	/**
+	 * Get merchantResponseUrl
+	 *
+	 * @return String merchantResponseUrl
+	 */
+	public String getMerchantResponseUrl() {
+		return merchantResponseUrl;
+	}
+
+	/**
+	 * Set merchantResponseUrl
+	 * @param String merchantResponseUrl
+	 */
+	public void setMerchantResponseUrl(String merchantResponseUrl) {
+		this.merchantResponseUrl = merchantResponseUrl;
+	}
+
+	/**
 	 * Creates the security hash from a number of fields and the shared secret. 
 	 * 
 	 * @param secret
@@ -2146,6 +2182,9 @@ public class HppRequest {
 		if (null != this.hppSelectStoredCard) {
 			this.hppSelectStoredCard = new String(Base64.encodeBase64(this.hppSelectStoredCard.getBytes(charset)));
 		}
+		if (null != this.merchantResponseUrl) {
+			this.merchantResponseUrl = new String(Base64.encodeBase64(this.merchantResponseUrl.getBytes(charset)));
+		}
 
 		// 3DS2 FIELDS
         if(null != this.customerEmail) {
@@ -2312,6 +2351,10 @@ public class HppRequest {
 		}
 		if (null != this.hppSelectStoredCard) {
 			this.hppSelectStoredCard = new String(Base64.decodeBase64(this.hppSelectStoredCard.getBytes(charset)));
+		}
+		
+		if (null != this.merchantResponseUrl) {
+			this.merchantResponseUrl = new String(Base64.decodeBase64(this.merchantResponseUrl.getBytes(charset)));
 		}
 
 		// 3DS2 FIELDS

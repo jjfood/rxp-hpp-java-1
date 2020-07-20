@@ -138,6 +138,90 @@ public class HppResponse {
 	private String commentTwo;
 
 	/**
+	 * This field indicates whether the cardholder chose to save their card or not.
+	 */@JsonProperty("REALWALLET_CHOSEN")
+	private String realwalletChosen;
+
+	/**
+	 * Indicates whether or not the Payer (customer) reference was set up successfully.
+	 */
+	@JsonProperty("PAYER_SETUP")
+	private String payerSetup;
+
+	/**
+	 * Result message text of the Payer setup attempt.
+	 */
+	@JsonProperty("PAYER_SETUP_MSG")
+	private String payerSetupMsg;
+
+	/**
+	 * The Payer reference given to the customer.
+	 */
+	@JsonProperty("SAVED_PAYER_REF")
+	private String savedPayerRef;
+
+	/**
+	 * Whether or not the customer's card was successfully stored.
+	 */
+	@JsonProperty("PMT_SETUP")
+	private String pmtSetup;
+
+	/**
+	 * Result message text of the Payment Reference (card) setup attempt.
+	 */
+	@JsonProperty("PMT_SETUP_MSG")
+	private String pmtSetupMsg;
+
+	/**
+	 * This is the card type of the&nbsp;Payment Reference stored.
+	 */
+	@JsonProperty("SAVED_PMT_TYPE")
+	private String savedPmtType;
+
+	/**
+	 * The Payment Reference assigned to the card.
+	 */
+	@JsonProperty("SAVED_PMT_REF")
+	private String savedPmtRef;
+
+	/**
+	 * The first six and last four digits of the card stored.
+	 */
+	@JsonProperty("SAVED_PMT_DIGITS")
+	private String savedPmtDigits;
+
+	/**
+	 * This will contain the expiry date of the stored card for display purposes.
+	 */
+	@JsonProperty("SAVED_PMT_EXPDATE")
+	private String savedPmtExpdate;
+
+	/**
+	 * The name of the person associated with the Payment Reference (the cardholder name).
+	 */
+	@JsonProperty("SAVED_PMT_NAME")
+	private String savedPmtName;
+
+
+	@JsonProperty("CARDDIGITS")
+	private String payerCardDigits;
+
+	@JsonProperty("CARDNAME")
+	private String payerCardName;
+
+	@JsonProperty("CARDTYPE")
+	private String payerCardType;
+
+	@JsonProperty("HPP_COMMERCIAL")
+	private String hppCommercial;
+
+	@JsonProperty("HPP_ISSUING_COUNTRY_CODE")
+	private String hppIssuingCountryCode;
+
+	@JsonProperty("HPP_ISSUING_BANK")
+	private String hppIssuingBank;
+
+	/**
 	 * The Transaction Suitability Score for the transaction. The RealScore is comprised of various distinct tests. 
 	 * Using the RealControl application you can request that Realex Payments return certain individual scores to you. 
 	 * These are identified by numbers - thus TSS_1032 would be the result of the check with id 1032. 
@@ -303,6 +387,119 @@ public class HppResponse {
 	 */
 	public String getCommentTwo() {
 		return commentTwo;
+	}
+
+	/**
+	 * Getter for saved payer ref.
+	 *
+	 * @return String
+	 */
+	public String getSavedPayerRef() {
+		return savedPayerRef;
+	}
+
+	/**
+	 * Getter for realwallet chosen.
+	 * @return String
+	 */
+	public String getRealwalletChosen() {
+		return realwalletChosen;
+	}
+
+	/**
+	 * Getter for payer setup.
+	 * @return String
+	 */
+	public String getPayerSetup() {
+		return payerSetup;
+	}
+
+	/**
+	 * Getter for payer setup msg.
+	 * @return String
+	 */
+	public String getPayerSetupMsg() {
+		return payerSetupMsg;
+	}
+
+	/**
+	 * Getter for pmt setup.
+	 * @return String
+	 */
+	public String getPmtSetup() {
+		return pmtSetup;
+	}
+
+	/**
+	 * Getter for pmt setup msg.
+	 * @return String
+	 */
+	public String getPmtSetupMsg() {
+		return pmtSetupMsg;
+	}
+
+	/**
+	 * Getter for saved pmt type.
+	 * @return String
+	 */
+	public String getSavedPmtType() {
+		return savedPmtType;
+	}
+
+	/**
+	 * Getter for saved pmt ref.
+	 * @return String
+	 */
+	public String getSavedPmtRef() {
+		return savedPmtRef;
+	}
+
+	/**
+	 * Getter for saved pmt digits.
+	 * @return String
+	 */
+	public String getSavedPmtDigits() {
+		return savedPmtDigits;
+	}
+
+	/**
+	 * Getter for saved pmt expdate.
+	 * @return String
+	 */
+	public String getSavedPmtExpdate() {
+		return savedPmtExpdate;
+	}
+
+	/**
+	 * Getter for saved pmt name.
+	 * @return String
+	 */
+	public String getSavedPmtName() {
+		return savedPmtName;
+	}
+
+	public String getPayerCardDigits() {
+		return payerCardDigits;
+	}
+
+	public String getPayerCardName() {
+		return payerCardName;
+	}
+
+	public String getPayerCardType() {
+		return payerCardType;
+	}
+
+	public String getHppCommercial() {
+		return hppCommercial;
+	}
+
+	public String getHppIssuingBank() {
+		return hppIssuingBank;
+	}
+
+	public String getHppIssuingCountryCode() {
+		return hppIssuingCountryCode;
 	}
 
 	/**
@@ -476,6 +673,74 @@ public class HppResponse {
 		this.tss = tss;
 	}
 
+	public void setRealwalletChosen(String realwalletChosen) {
+		this.realwalletChosen = realwalletChosen;
+	}
+
+	public void setPayerSetup(String payerSetup) {
+		this.payerSetup = payerSetup;
+	}
+
+	public void setPayerSetupMsg(String payerSetupMsg) {
+		this.payerSetupMsg = payerSetupMsg;
+	}
+
+	public void setSavedPayerRef(String savedPayerRef) {
+		this.savedPayerRef = savedPayerRef;
+	}
+
+	public void setPmtSetup(String pmtSetup) {
+		this.pmtSetup = pmtSetup;
+	}
+
+	public void setPmtSetupMsg(String pmtSetupMsg) {
+		this.pmtSetupMsg = pmtSetupMsg;
+	}
+
+	public void setSavedPmtType(String savedPmtType) {
+		this.savedPmtType = savedPmtType;
+	}
+
+	public void setSavedPmtRef(String savedPmtRef) {
+		this.savedPmtRef = savedPmtRef;
+	}
+
+	public void setSavedPmtDigits(String savedPmtDigits) {
+		this.savedPmtDigits = savedPmtDigits;
+	}
+
+	public void setSavedPmtExpdate(String savedPmtExpdate) {
+		this.savedPmtExpdate = savedPmtExpdate;
+	}
+
+	public void setSavedPmtName(String savedPmtName) {
+		this.savedPmtName = savedPmtName;
+	}
+
+	public void setPayerCardDigits(String payerCardDigits) {
+		this.payerCardDigits = payerCardDigits;
+	}
+
+	public void setPayerCardName(String payerCardName) {
+		this.payerCardName = payerCardName;
+	}
+
+	public void setPayerCardType(String payerCardType) {
+		this.payerCardType = payerCardType;
+	}
+
+	public void setHppCommercial(String hppCommercial) {
+		this.hppCommercial = hppCommercial;
+	}
+
+	public void setHppIssuingBank(String hppIssuingBank) {
+		this.hppIssuingBank = hppIssuingBank;
+	}
+
+	public void setHppIssuingCountryCode(String hppIssuingCountryCode) {
+		this.hppIssuingCountryCode = hppIssuingCountryCode;
+	}
+
 	/**
 	 * Getter for supplementary data.
 	 * 
@@ -604,6 +869,57 @@ public class HppResponse {
 		if (null != this.timeStamp) {
 			this.timeStamp = new String(Base64.encodeBase64(this.timeStamp.getBytes(charset)), charset);
 		}
+		if (null != this.realwalletChosen) {
+			this.realwalletChosen = new String(Base64.encodeBase64(this.realwalletChosen.getBytes(charset)), charset);
+		}
+		if (null != this.payerSetup) {
+			this.payerSetup = new String(Base64.encodeBase64(this.payerSetup.getBytes(charset)), charset);
+		}
+		if (null != this.payerSetupMsg) {
+			this.payerSetupMsg = new String(Base64.encodeBase64(this.payerSetupMsg.getBytes(charset)), charset);
+		}
+		if (null != this.savedPayerRef) {
+			this.savedPayerRef = new String(Base64.encodeBase64(this.savedPayerRef.getBytes(charset)), charset);
+		}
+		if (null != this.pmtSetup) {
+			this.pmtSetup = new String(Base64.encodeBase64(this.pmtSetup.getBytes(charset)), charset);
+		}
+		if (null != this.pmtSetupMsg) {
+			this.pmtSetupMsg = new String(Base64.encodeBase64(this.pmtSetupMsg.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtType) {
+			this.savedPmtType = new String(Base64.encodeBase64(this.savedPmtType.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtRef) {
+			this.savedPmtRef = new String(Base64.encodeBase64(this.savedPmtRef.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtDigits) {
+			this.savedPmtDigits = new String(Base64.encodeBase64(this.savedPmtDigits.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtExpdate) {
+			this.savedPmtExpdate = new String(Base64.encodeBase64(this.savedPmtExpdate.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtName) {
+			this.savedPmtName = new String(Base64.encodeBase64(this.savedPmtName.getBytes(charset)), charset);
+		}
+		if (null != this.payerCardName) {
+			this.payerCardName = new String(Base64.encodeBase64(this.payerCardName.getBytes(charset)), charset);
+		}
+		if (null != this.payerCardDigits) {
+			this.payerCardDigits = new String(Base64.encodeBase64(this.payerCardDigits.getBytes(charset)), charset);
+		}
+		if (null != this.payerCardType) {
+			this.payerCardType = new String(Base64.encodeBase64(this.payerCardType.getBytes(charset)), charset);
+		}
+		if (null != this.hppCommercial) {
+			this.hppCommercial = new String(Base64.encodeBase64(this.hppCommercial.getBytes(charset)), charset);
+		}
+		if (null != this.hppIssuingBank) {
+			this.hppIssuingBank = new String(Base64.encodeBase64(this.hppIssuingBank.getBytes(charset)), charset);
+		}
+		if (null != this.hppIssuingCountryCode) {
+			this.hppIssuingCountryCode = new String(Base64.encodeBase64(this.hppIssuingCountryCode.getBytes(charset)), charset);
+		}
 		if (null != this.tss) {
 			Map<String, String> tssMap = new HashMap<String, String>();
 			for (String key : tss.keySet()) {
@@ -682,6 +998,57 @@ public class HppResponse {
 		}
 		if (null != this.timeStamp) {
 			this.timeStamp = new String(Base64.decodeBase64(this.timeStamp.getBytes(charset)), charset);
+		}
+		if (null != this.realwalletChosen) {
+			this.realwalletChosen = new String(Base64.decodeBase64(this.realwalletChosen.getBytes(charset)), charset);
+		}
+		if (null != this.payerSetup) {
+			this.payerSetup = new String(Base64.decodeBase64(this.payerSetup.getBytes(charset)), charset);
+		}
+		if (null != this.payerSetupMsg) {
+			this.payerSetupMsg = new String(Base64.decodeBase64(this.payerSetupMsg.getBytes(charset)), charset);
+		}
+		if (null != this.savedPayerRef) {
+			this.savedPayerRef = new String(Base64.decodeBase64(this.savedPayerRef.getBytes(charset)), charset);
+		}
+		if (null != this.pmtSetup) {
+			this.pmtSetup = new String(Base64.decodeBase64(this.pmtSetup.getBytes(charset)), charset);
+		}
+		if (null != this.pmtSetupMsg) {
+			this.pmtSetupMsg = new String(Base64.decodeBase64(this.pmtSetupMsg.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtType) {
+			this.savedPmtType = new String(Base64.decodeBase64(this.savedPmtType.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtRef) {
+			this.savedPmtRef = new String(Base64.decodeBase64(this.savedPmtRef.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtDigits) {
+			this.savedPmtDigits = new String(Base64.decodeBase64(this.savedPmtDigits.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtExpdate) {
+			this.savedPmtExpdate = new String(Base64.decodeBase64(this.savedPmtExpdate.getBytes(charset)), charset);
+		}
+		if (null != this.savedPmtName) {
+			this.savedPmtName = new String(Base64.decodeBase64(this.savedPmtName.getBytes(charset)), charset);
+		}
+		if (null != this.payerCardName) {
+			this.payerCardName = new String(Base64.decodeBase64(this.payerCardName.getBytes(charset)), charset);
+		}
+		if (null != this.payerCardDigits) {
+			this.payerCardDigits = new String(Base64.decodeBase64(this.payerCardDigits.getBytes(charset)), charset);
+		}
+		if (null != this.payerCardType) {
+			this.payerCardType = new String(Base64.decodeBase64(this.payerCardType.getBytes(charset)), charset);
+		}
+		if (null != this.hppCommercial) {
+			this.hppCommercial = new String(Base64.decodeBase64(this.hppCommercial.getBytes(charset)), charset);
+		}
+		if (null != this.hppIssuingCountryCode) {
+			this.hppIssuingCountryCode = new String(Base64.decodeBase64(this.hppIssuingCountryCode.getBytes(charset)), charset);
+		}
+		if (null != this.hppIssuingBank) {
+			this.hppIssuingBank = new String(Base64.decodeBase64(this.hppIssuingBank.getBytes(charset)), charset);
 		}
 		if (null != this.tss) {
 			Map<String, String> tssMap = new HashMap<String, String>();
