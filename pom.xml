@@ -26,6 +26,16 @@
 		<developerConnection>scm:git:git@github.com:realexpayments/rxp-hpp-java.git</developerConnection>
 		<url>https://github.com/realexpayments/rxp-hpp-java.git</url>
 	</scm>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>jj-bucket-snapshot</id>
+			<url>bs://jjdevopsrepository/snapshot</url>
+		</snapshotRepository>
+		<repository>
+			<id>jj-bucket-release</id>
+			<url>bs://jjdevopsrepository/release</url>
+		</repository>
+	</distributionManagement>
 
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
