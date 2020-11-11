@@ -328,7 +328,7 @@ public class HppRequest {
      * Customer’s email address, including the full domain name. The field must be submitted in the form name@host.domain
      */
     @Size(max = 254, message = "{hppRequest.customerEmail.size}")
-    @Pattern(regexp = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,24})*$", message = "{hppRequest.customerEmail.pattern}")
+    @Pattern(regexp = "^([a-zA-Z0-9_\\-\\.\\+]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,24})*$", message = "{hppRequest.customerEmail.pattern}")
 	@JsonProperty("HPP_CUSTOMER_EMAIL")
     private String customerEmail;
 
