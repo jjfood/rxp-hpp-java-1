@@ -388,7 +388,7 @@ public class HppRequest {
      * ZIP or other postal code customer's billing address.
      */
     @Size(max = 16, message = "{hppRequest.billingAddressPostalCode.size}")
-    @Pattern(regexp = "^[a-zA-Z0-9-\\s]{1,16}$", message = "{hppRequest.billingAddressPostalCode.pattern}")
+    @Pattern(regexp = "^[a-zA-Z0-9-\\s]*$", message = "{hppRequest.billingAddressPostalCode.pattern}")
     @JsonProperty("HPP_BILLING_POSTALCODE")
     private String billingAddressPostalCode;
 
@@ -447,7 +447,7 @@ public class HppRequest {
      * ZIP or other postal code customer's shipping address.
      */
     @Size(max = 16, message = "{hppRequest.shippingAddressPostalCode.size}")
-    @Pattern(regexp = "^[a-zA-Z0-9-\\s]{1,16}$", message = "{hppRequest.shippingAddressPostalCode.pattern}")
+    @Pattern(regexp = "^[a-zA-Z0-9-\\s]*$", message = "{hppRequest.shippingAddressPostalCode.pattern}")
     @JsonProperty("HPP_SHIPPING_POSTALCODE")
     private String shippingAddressPostalCode;
 
