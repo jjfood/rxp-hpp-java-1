@@ -10,8 +10,8 @@ resources:
     name: jjfood/azure-devops-pipelines
     endpoint: jjfood
 
-jobs:
-- template: templates/java-new-build-library.yml@templates
-  parameters:
-    baseVersion: '2.0'
-    javaVersion: '1.8'
+stages:
+  - template: builds/java-build-library.yml@templates
+    parameters:
+      baseVersion: '2.0'
+      javaVersion: '1.8'
